@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GOL</title>
+	<style type="text/css">
+		body { 
+			background-color: black;
+			color: white;
+			text-align: center;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+		 }
+		canvas {
+			border: solid 2px #333333;
+		}
+		.btn {
+		    background-color: #3498DB;
+		    width: 150px;
+		    color: white;
+		    padding: 16px;
+		    font-size: 16px;
+		    border: none;
+		    cursor: pointer;
+		}
+
+		.btn:hover, .btn:focus {
+		    background-color: #2980B9;
+		}
+
+		.dropdown {
+		    position: relative;
+		    display: inline-block;
+		}
+
+		.dropdown-content {
+		    display: none;
+		    position: absolute;
+		    background-color: #f1f1f1;
+		    min-width: 150px;
+		    overflow: auto;
+		    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		    z-index: 1;
+			overflow: initial;
+		}
+
+		.dropdown-content a {
+		    color: black;
+		    padding: 12px 16px;
+		    text-decoration: none;
+		    display: block;
+		}
+
+		.dropdown a:hover {background-color: #ddd}
+
+		.show {display:block;}
+
+		.tooltip {
+		    position: relative;
+		    display: inline-block;
+		}
+
+		.tooltip .tooltiptext {
+		    visibility: hidden;
+		    width: 100px;
+		    background-color: #f1f1f1;
+		    color: black;
+		    text-align: center;
+		    border-radius: 6px;
+		    padding: 5px 0;
+		    
+		    /* Position the tooltip */
+		    position: absolute;
+		    z-index: 1;
+		    top: -5px;
+		    left: 115%;
+		}
+		.tooltip:hover .tooltiptext {
+		    visibility: visible;
+		}
+	</style>
+</head>
+<body>
+	<button class="btn" onclick="startStop()">Pause</button>
+	<button class="btn" onclick="step()">Step</button>
+	<button class="btn" onclick="restart()">Restart</button>
+	<button class="btn" onclick="newSeed()">New Seed</button>
+	<button class="btn" onclick="aliveSeed()">Model Test</button>	
+	<div class="dropdown">
+		<button class="btn ddbtn" onclick="dropDown()">Load Ranked</button>
+		<div id="rankDropdown" class="dropdown-content">
+		</div>
+	</div>
+	<div class="slidecontainer">
+  		<input type="range" min="1" max="60" value="5" class="slider" id="speedSlider">
+	</div>
+	<div id="sliderText">5 fps</div>
+	<br>
+<script src="./gol.js"></script>
+</body>
+</html>
